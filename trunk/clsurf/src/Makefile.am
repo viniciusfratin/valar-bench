@@ -1,4 +1,3 @@
-
 # Build CLSURF with AMD OpenCL libraries
 if BUILD_CLSURF_AMD
 bin_PROGRAMS = $(top_builddir)/bin/amd/OpenSurf
