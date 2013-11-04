@@ -156,6 +156,13 @@ AC_CONFIG_FILES([
 	Makefile
 	clsurf/Makefile
 	clsurf/src/Makefile
+	clhaptic/Makefile
+	clhaptic/libanalysis-devices/Makefile
+	clhaptic/libinterceptor/Makefile
+	clhaptic/libmisc/Makefile
+	clhaptic/libprofiler/Makefile
+	clhaptic/librules/Makefile
+	clhaptic/libtopology/Makefile
 ])
 
 AC_OUTPUT

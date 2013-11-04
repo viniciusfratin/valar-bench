@@ -1,0 +1,15 @@
+OpenCL interceptor
+
+1 - A plain C interface to the profiler.
+
+//! In interceptor file
+clEnqNDR( ___,
+          ___, 
+        cl_event *           event )
+{
+
+
+    dlsym();
+    profiler->add(event);
+
+}             

@@ -1,4 +1,5 @@
 SUBDIRS = \
-	clsurf
+	clsurf \
+	clhaptic
 
 ACLOCAL_AMFLAGS = -I m4
