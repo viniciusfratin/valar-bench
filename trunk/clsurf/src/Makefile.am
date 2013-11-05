@@ -22,10 +22,10 @@ __top_builddir__bin_amd_OpenSurf_SOURCES = \
 	utils.cpp \
 	utils.h
 
-__top_builddir__bin_amd_OpenSurf_CPPFLAGS = \
+AM_CPPFLAGS = \
 	@CLSURF_AMD_INCLUDES@
 
-__top_builddir__bin_amd_OpenSurf_LDADD = \
+LDADD = \
 	@CLSURF_AMD_LDADD@
 
 endif
