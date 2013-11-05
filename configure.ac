@@ -3,6 +3,7 @@ AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([-Wall -Werror])
 AM_PROG_AS
 AC_PROG_CC
+AM_PROG_CC_C_O
 AC_PROG_CXX
 AC_PROG_INSTALL
 
@@ -122,8 +123,18 @@ then
 fi
 
 # Warning if not
-if test "x$have_amd_opencl" = "xno"
+AM_CONDITIONAL(HAVE_AMD_OPENCL, test x$have_amd_opencl == xyes)
+if test "x$have_amd_opencl" = "xyes"
 then
+	AC_DEFINE(HAVE_AMD_OPENCL, [1])
+	AMD_OPENCL_INCLUDES="-I$AMDAPPSDKROOT/include"
+	AC_SUBST([AMD_OPENCL_INCLUDES])
+	AMD_OPENCL_LDFLAGS="LDFLAGS="-L$AMDAPPSDKROOT/lib/x86 -L$AMDAPPSDKROOT/lib/x86_64
+	AC_SUBST([AMD_OPENCL_LDFLAGS])	
+	AMD_OPENCL_LDADD="-lOpenCL"
+	AC_SUBST([AMD_OPENCL_LDADD])
+
+else
 	AC_MSG_WARN([
 	
 	The AMD OpenCL SDK is not presently installed in your system, as
@@ -163,6 +174,7 @@ AC_CONFIG_FILES([
 	clhaptic/libprofiler/Makefile
 	clhaptic/librules/Makefile
 	clhaptic/libtopology/Makefile
+	fir/Makefile
 ])
 
 AC_OUTPUT
