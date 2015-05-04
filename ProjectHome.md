@@ -1,0 +1,1 @@
+The Valar benchmark suite targets heterogeneous computing
